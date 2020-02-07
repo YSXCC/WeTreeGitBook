@@ -15,5 +15,5 @@ entry:
     ret
 PrintMsg:       db "Hello,WeTreeOS!!"
 times	510 - ($ - $$)    db 0
+db  0x55    ;一定要注意高低地址，不要写反了
 db  0xaa
-db  0x55
