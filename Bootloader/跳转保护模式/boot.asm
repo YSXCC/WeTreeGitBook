@@ -5,10 +5,10 @@ org 0x7c00  ;加载程序到内存-----7c00-----处,ORG是伪指令
 
 ;GDT定义
 [SECTION .gdt]
-;GDT属性                        段基址               段界限              段属性
-LABEL_GDT:         Descriptor     0,                  0,                 0           ;空描述符
-LABEL_DESC_CODE32: Descriptor     0,           SegCode32Len-1,        DA_C + DA_32   ;非一致代码段
-LABEL_DESC_VIDEO:  Descriptor   0B8000h,            0ffffh,           DA_DRW         ;显存首地址
+;GDT属性                        段基址       段界限       段属性
+LABEL_GDT:         Descriptor     0,          0,          0            ;空描述符
+LABEL_DESC_CODE32: Descriptor     0,    SegCode32Len-1, DA_C + DA_32   ;非一致代码段
+LABEL_DESC_VIDEO:  Descriptor   0B8000h,    0ffffh,     DA_DRW         ;显存首地址
 ;GDT结束    
 
 GdtLen      equ    $  -  LABEL_GDT      ;GDT长度
@@ -72,13 +72,28 @@ LABEL_BEGIN:
 LABEL_SEG_CODE32:
     mov ax, SelectorVideo
     mov gs, ax
-    mov edi, (80*11+79) * 2
-    mov ah, 0CH
-    mov al, 'P'
-    mov [gs:di], ax
+    mov si, Msg
+    mov ebx, 10
+    mov ecx, 2
+
+    mov edi, (80*11+25) * 2     ;总共占两个字节(80x25个字符)
+ShowStr:                        ;前一个字节为ASCII码，后一个为显示属性）
+    mov ah, 0CH                 ;0000黑底   1100红字
+    mov al, [si]                ;ASCII码值
+    cmp al, 0
+    je  END
+
+    mov [gs:edi], ax
+    add edi, 2
+    add si, 1
+    jmp ShowStr
 
 ;到此为止
+END:
     jmp $
+
+Msg:
+    DB  "In Protected Mode" , 0
 
 SegCode32Len    equ     $ - LABEL_SEG_CODE32
 
