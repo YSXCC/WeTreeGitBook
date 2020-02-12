@@ -50,4 +50,11 @@ void init_desktop(unsigned char* vram,int screen_lenth,int screen_height);    //
 void paint_font(unsigned char* vram, int screen_lenth, int start_x,int start_y,char* font,char color);      //画字符
 
 void paint_string(unsigned char* vram, int screen_lenth,int start_x,int start_y,char* str,char color);      //画字符串
+
+void init_mouse_cursor(char* mouse,char back_color);    //初始化鼠标，把颜色的索引放到一个数组中
+
+void paint_block(char* vram,int screen_lenth,//画一个矩形，但是颜色由buf这个数组规定
+                int start_x,int start_y,
+                int x_size, int y_size,      //矩形大小
+                char* buf);
 #endif
