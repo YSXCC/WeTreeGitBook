@@ -80,3 +80,28 @@ void init_desktop(unsigned char* vram,int screen_lenth,int screen_height){
     paint_rectangle(vram, screen_lenth, COL8_FFFFFF, screen_lenth-47, screen_height-3,  screen_lenth-4,  screen_height-3);
     paint_rectangle(vram, screen_lenth, COL8_FFFFFF, screen_lenth-3,  screen_height-24, screen_lenth-3,  screen_height-3);
 }
+
+void paint_font(unsigned char* vram, int screen_lenth, int start_x,int start_y,char* font,char color){
+    //8*16大小的字体
+    int i;
+    unsigned char c;
+
+    for(i = 0;i < 16;i++){  //16行
+        c = font[i];
+        if( (c & 0x80) != 0 ){  vram[(start_y+i) * screen_lenth + start_x + 0] = color ;}
+        if( (c & 0x40) != 0 ){  vram[(start_y+i) * screen_lenth + start_x + 1] = color ;}
+        if( (c & 0x20) != 0 ){  vram[(start_y+i) * screen_lenth + start_x + 2] = color ;}
+        if( (c & 0x10) != 0 ){  vram[(start_y+i) * screen_lenth + start_x + 3] = color ;}
+        if( (c & 0x08) != 0 ){  vram[(start_y+i) * screen_lenth + start_x + 4] = color ;}
+        if( (c & 0x04) != 0 ){  vram[(start_y+i) * screen_lenth + start_x + 5] = color ;}
+        if( (c & 0x02) != 0 ){  vram[(start_y+i) * screen_lenth + start_x + 6] = color ;}
+        if( (c & 0x01) != 0 ){  vram[(start_y+i) * screen_lenth + start_x + 7] = color ;}
+    }
+}
+
+void paint_string(unsigned char* vram, int screen_lenth,int start_x,int start_y,char* str,char color){
+    for(;*str != 0x00;str++){
+        paint_font(vram,screen_lenth,start_x,start_y,systemFont+ *str * 16 ,COL8_000000);
+        start_x += 8;
+    }
+}

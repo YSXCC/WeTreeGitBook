@@ -9,16 +9,17 @@ jmp   LABEL_BEGIN
 
 ;GDT定义
 [SECTION .gdt]
-;GDT属性                        段基址       段界限       段属性
-LABEL_GDT:         Descriptor     0,          0,          0            ;空描述符
-LABEL_DESC_CODE32: Descriptor     0,    SegCode32Len-1, DA_C + DA_32   ;非一致代码段
-LABEL_DESC_VIDEO:  Descriptor   0B8000h,    0ffffh,     DA_DRW         ;文本模式显存地址
-LABEL_DESC_VRAM:   Descriptor   0A0000h,    0ffffh,     DA_DRW         ;图像模式显存地址
-LABEL_DESC_DATA:   Descriptor     0,      0ffffffffh,   DA_DRW         ;数据段
+;GDT属性                        段基址       段界限         段属性
+LABEL_GDT:         Descriptor     0,          0,            0                 ;空描述符
+LABEL_DESC_CODE32: Descriptor     0,    SegCode32Len-1,   DA_C + DA_32        ;非一致代码段
+LABEL_DESC_VIDEO:  Descriptor   0B8000h,    0ffffh,       DA_DRW              ;文本模式显存地址
+LABEL_DESC_VRAM:   Descriptor   0A0000h,    0ffffh,       DA_DRW              ;图像模式显存地址
+LABEL_DESC_DATA:   Descriptor     0,      0ffffffffh,     DA_DRW              ;数据段
+LABEL_DESC_FONT:   Descriptor     0,  SystemFontLength-1, DA_DRW|DA_LIMIT_4K  ;字符段，256个字符，256*16B = 4KB
 ;GDT结束    
 
-GdtLen      equ    $  -  LABEL_GDT      ;GDT长度
-GdtPtr      dw     GdtLen - 1           ;GDT界限  
+GdtLen      equ    $  -  LABEL_GDT      ;GDT长度1
+GdtPtr      dw     GdtLen - 1           ;GDT界限
             dd     0                    ;GDT基地址
 
 ;GDT选择子
@@ -26,6 +27,7 @@ SelectorCode32     equ      LABEL_DESC_CODE32   -   LABEL_GDT
 SelectorVideo      equ      LABEL_DESC_VIDEO    -   LABEL_GDT
 SelectorVram       equ      LABEL_DESC_VRAM     -   LABEL_GDT
 SelectorData       equ      LABEL_DESC_DATA     -   LABEL_GDT
+SelectorFont       equ      LABEL_DESC_FONT     -   LABEL_GDT
 ;END of [SECTION .gdt]
 
 [SECTION .s16]
@@ -51,6 +53,16 @@ LABEL_BEGIN:
     shr eax, 16
     mov byte [LABEL_DESC_CODE32 + 4], al    ;段基址2放入描述符中
     mov byte [LABEL_DESC_CODE32 + 7], ah    ;段基址3放入描述符中
+
+;初始化32位字体段描述符
+    xor eax, eax
+    mov ax, ds
+    shl eax, 4                              ;寻址方式是 16*cs+ip,所以要乘以4
+    add eax, LABEL_DESC_FONT                ;获取32位代码段的基址
+    mov word [LABEL_DESC_FONT + 2], ax      ;段基址1放入描述符中
+    shr eax, 16
+    mov byte [LABEL_DESC_FONT + 4], al      ;段基址2放入描述符中
+    mov byte [LABEL_DESC_FONT + 7], ah      ;段基址3放入描述符中
 
 ;为加载GDTR做准备
     xor eax, eax
@@ -90,6 +102,8 @@ LABEL_SEG_CODE32:
     mov ds, ax
 %include "ckernel.asm"
 
+
+;汇编相关C语言函数
 io_hlt:   ;void io_hlt(void);暂停
     HLT
     RET
@@ -138,3 +152,10 @@ io_store_eflags:          ;void io_store_eflags(int eflags);
     ret
 
 SegCode32Len    equ     $ - LABEL_SEG_CODE32
+
+[SECTION .data]
+[BITS 32]
+LABEL_SYSTEM_FONT:
+%include "fontData.inc"
+
+SystemFontLength equ    $ - LABEL_SYSTEM_FONT
