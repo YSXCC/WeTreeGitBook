@@ -136,7 +136,7 @@ void init_mouse_cursor(char* mouse,char back_color){
             }else if(cursor[row][column] == 'O'){   //'O'是白色的
                 mouse[row*16 + column] = COL8_FFFFFF;
             }else{
-                mouse[row*16 + column] = back_color;
+                mouse[row*16 + column] = back_color;//其他是背景色
             }
         }
     }
