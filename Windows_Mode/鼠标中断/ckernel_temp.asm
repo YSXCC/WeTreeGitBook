@@ -1,5 +1,5 @@
 ; Disassembly of file: ckernel.o
-; Thu Feb 13 19:25:28 2020
+; Thu Feb 13 21:07:43 2020
 ; Mode: 32 bits
 ; Syntax: YASM/NASM
 ; Instruction set: 80386
@@ -70,7 +70,7 @@ CMain:  ; Function begin
         mov     dword [esp], eax                        ; 0082 _ 89. 04 24
         call    paint_font                              ; 0085 _ E8, FFFFFFFC(rel)
         mov     dword [esp+14H], 0                      ; 008A _ C7. 44 24, 14, 00000000
-        mov     dword [esp+10H], ?_034                  ; 0092 _ C7. 44 24, 10, 00000000(d)
+        mov     dword [esp+10H], ?_036                  ; 0092 _ C7. 44 24, 10, 00000000(d)
         mov     dword [esp+0CH], 16                     ; 009A _ C7. 44 24, 0C, 00000010
         mov     dword [esp+8H], 0                       ; 00A2 _ C7. 44 24, 08, 00000000
         mov     eax, dword [ebp-10H]                    ; 00AA _ 8B. 45, F0
@@ -814,7 +814,7 @@ intHandlerKeyboard:; Function begin
         mov     dword [esp], eax                        ; 09E2 _ 89. 04 24
         call    paint_rectangle                         ; 09E5 _ E8, FFFFFFFC(rel)
         mov     dword [esp+14H], 7                      ; 09EA _ C7. 44 24, 14, 00000007
-        mov     dword [esp+10H], ?_035                  ; 09F2 _ C7. 44 24, 10, 0000000B(d)
+        mov     dword [esp+10H], ?_037                  ; 09F2 _ C7. 44 24, 10, 0000000B(d)
         mov     dword [esp+0CH], 0                      ; 09FA _ C7. 44 24, 0C, 00000000
         mov     dword [esp+8H], 0                       ; 0A02 _ C7. 44 24, 08, 00000000
         mov     eax, dword [ebp-10H]                    ; 0A0A _ 8B. 45, F0
@@ -822,59 +822,57 @@ intHandlerKeyboard:; Function begin
         mov     eax, dword [ebp-14H]                    ; 0A11 _ 8B. 45, EC
         mov     dword [esp], eax                        ; 0A14 _ 89. 04 24
         call    paint_string                            ; 0A17 _ E8, FFFFFFFC(rel)
-        leave                                           ; 0A1C _ C9
-        ret                                             ; 0A1D _ C3
+?_034:  call    io_hlt                                  ; 0A1C _ E8, FFFFFFFC(rel)
+        jmp     ?_034                                   ; 0A21 _ EB, F9
 ; intHandlerKeyboard End of function
 
 intHandlerMouse:; Function begin
-        push    ebp                                     ; 0A1E _ 55
-        mov     ebp, esp                                ; 0A1F _ 89. E5
-        sub     esp, 56                                 ; 0A21 _ 83. EC, 38
-        mov     eax, dword [screen_info]                ; 0A24 _ A1, 00000000(d)
-        mov     dword [ebp-14H], eax                    ; 0A29 _ 89. 45, EC
-        movzx   eax, word [screen_info+4H]              ; 0A2C _ 0F B7. 05, 00000004(d)
-        cwde                                            ; 0A33 _ 98
-        mov     dword [ebp-10H], eax                    ; 0A34 _ 89. 45, F0
-        movzx   eax, word [screen_info+6H]              ; 0A37 _ 0F B7. 05, 00000006(d)
-        cwde                                            ; 0A3E _ 98
-        mov     dword [ebp-0CH], eax                    ; 0A3F _ 89. 45, F4
-        mov     dword [esp+18H], 30                     ; 0A42 _ C7. 44 24, 18, 0000001E
-        mov     dword [esp+14H], 255                    ; 0A4A _ C7. 44 24, 14, 000000FF
-        mov     dword [esp+10H], 16                     ; 0A52 _ C7. 44 24, 10, 00000010
-        mov     dword [esp+0CH], 0                      ; 0A5A _ C7. 44 24, 0C, 00000000
-        mov     dword [esp+8H], 0                       ; 0A62 _ C7. 44 24, 08, 00000000
-        mov     eax, dword [ebp-10H]                    ; 0A6A _ 8B. 45, F0
-        mov     dword [esp+4H], eax                     ; 0A6D _ 89. 44 24, 04
-        mov     eax, dword [ebp-14H]                    ; 0A71 _ 8B. 45, EC
-        mov     dword [esp], eax                        ; 0A74 _ 89. 04 24
-        call    paint_rectangle                         ; 0A77 _ E8, FFFFFFFC(rel)
-        mov     dword [esp+14H], 7                      ; 0A7C _ C7. 44 24, 14, 00000007
-        mov     dword [esp+10H], ?_036                  ; 0A84 _ C7. 44 24, 10, 00000019(d)
-        mov     dword [esp+0CH], 16                     ; 0A8C _ C7. 44 24, 0C, 00000010
-        mov     dword [esp+8H], 0                       ; 0A94 _ C7. 44 24, 08, 00000000
-        mov     eax, dword [ebp-10H]                    ; 0A9C _ 8B. 45, F0
-        mov     dword [esp+4H], eax                     ; 0A9F _ 89. 44 24, 04
-        mov     eax, dword [ebp-14H]                    ; 0AA3 _ 8B. 45, EC
-        mov     dword [esp], eax                        ; 0AA6 _ 89. 04 24
-        call    paint_string                            ; 0AA9 _ E8, FFFFFFFC(rel)
-        mov     dword [esp], 0                          ; 0AAE _ C7. 04 24, 00000000
-        call    intHandlerKeyboard                      ; 0AB5 _ E8, FFFFFFFC(rel)
-        leave                                           ; 0ABA _ C9
-        ret                                             ; 0ABB _ C3
+        push    ebp                                     ; 0A23 _ 55
+        mov     ebp, esp                                ; 0A24 _ 89. E5
+        sub     esp, 56                                 ; 0A26 _ 83. EC, 38
+        mov     eax, dword [screen_info]                ; 0A29 _ A1, 00000000(d)
+        mov     dword [ebp-14H], eax                    ; 0A2E _ 89. 45, EC
+        movzx   eax, word [screen_info+4H]              ; 0A31 _ 0F B7. 05, 00000004(d)
+        cwde                                            ; 0A38 _ 98
+        mov     dword [ebp-10H], eax                    ; 0A39 _ 89. 45, F0
+        movzx   eax, word [screen_info+6H]              ; 0A3C _ 0F B7. 05, 00000006(d)
+        cwde                                            ; 0A43 _ 98
+        mov     dword [ebp-0CH], eax                    ; 0A44 _ 89. 45, F4
+        mov     dword [esp+18H], 30                     ; 0A47 _ C7. 44 24, 18, 0000001E
+        mov     dword [esp+14H], 255                    ; 0A4F _ C7. 44 24, 14, 000000FF
+        mov     dword [esp+10H], 16                     ; 0A57 _ C7. 44 24, 10, 00000010
+        mov     dword [esp+0CH], 0                      ; 0A5F _ C7. 44 24, 0C, 00000000
+        mov     dword [esp+8H], 0                       ; 0A67 _ C7. 44 24, 08, 00000000
+        mov     eax, dword [ebp-10H]                    ; 0A6F _ 8B. 45, F0
+        mov     dword [esp+4H], eax                     ; 0A72 _ 89. 44 24, 04
+        mov     eax, dword [ebp-14H]                    ; 0A76 _ 8B. 45, EC
+        mov     dword [esp], eax                        ; 0A79 _ 89. 04 24
+        call    paint_rectangle                         ; 0A7C _ E8, FFFFFFFC(rel)
+        mov     dword [esp+14H], 7                      ; 0A81 _ C7. 44 24, 14, 00000007
+        mov     dword [esp+10H], ?_038                  ; 0A89 _ C7. 44 24, 10, 00000019(d)
+        mov     dword [esp+0CH], 16                     ; 0A91 _ C7. 44 24, 0C, 00000010
+        mov     dword [esp+8H], 0                       ; 0A99 _ C7. 44 24, 08, 00000000
+        mov     eax, dword [ebp-10H]                    ; 0AA1 _ 8B. 45, F0
+        mov     dword [esp+4H], eax                     ; 0AA4 _ 89. 44 24, 04
+        mov     eax, dword [ebp-14H]                    ; 0AA8 _ 8B. 45, EC
+        mov     dword [esp], eax                        ; 0AAB _ 89. 04 24
+        call    paint_string                            ; 0AAE _ E8, FFFFFFFC(rel)
+?_035:  call    io_hlt                                  ; 0AB3 _ E8, FFFFFFFC(rel)
+        jmp     ?_035                                   ; 0AB8 _ EB, F9
 ; intHandlerMouse End of function
 
 
 SECTION .rodata align=1 noexecute                       ; section number 2, const
 
-?_034:                                                  ; byte
+?_036:                                                  ; byte
         db 48H, 65H, 6CH, 6CH, 6FH, 57H, 6FH, 72H       ; 0000 _ HelloWor
         db 6CH, 64H, 00H                                ; 0008 _ ld.
 
-?_035:                                                  ; byte
+?_037:                                                  ; byte
         db 50H, 53H, 2FH, 32H, 20H, 4BH, 65H, 79H       ; 000B _ PS/2 Key
         db 62H, 6FH, 61H, 72H, 64H, 00H                 ; 0013 _ board.
 
-?_036:                                                  ; byte
+?_038:                                                  ; byte
         db 50H, 53H, 2FH, 32H, 20H, 4DH, 6FH, 75H       ; 0019 _ PS/2 Mou
         db 73H, 65H, 00H                                ; 0021 _ se.
 
