@@ -39,5 +39,7 @@ char* intToHexStr(unsigned int data){
         }else{
             str[p] = '0' + tmp;
         }
+        p--;
     }
+    return str;
 }
