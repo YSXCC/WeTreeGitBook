@@ -29,11 +29,16 @@ void CMain(void){
     int memCnt = get_memory_block_count();
     AddrRangeDesc* memoryAddr = (AddrRangeDesc*)get_memory_address();
 
+    
+
     io_sti();
 
     init_desktop(vram,screen_lenth,screen_height);
     init_mouse_cursor(mouse_cursor_buf,COL8_448CBB);
     paint_block(vram,screen_lenth,mouse_x,mouse_y,16,16,mouse_cursor_buf);
+
+    char* str = (char*)intToHexStr(memCnt);
+    paint_string(vram,screen_lenth,0,0,str,COL8_FFFFFF);
 
     enable_mouse();
     int data=0;
