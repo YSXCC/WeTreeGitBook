@@ -1,5 +1,5 @@
 ; Disassembly of file: ckernel.o
-; Mon Feb 17 13:21:11 2020
+; Tue Feb 18 13:49:40 2020
 ; Mode: 32 bits
 ; Syntax: YASM/NASM
 ; Instruction set: 80386
@@ -963,13 +963,13 @@ compute_mouse_position:; Function begin
         cwde                                            ; 0B83 _ 98
         sub     eax, 16                                 ; 0B84 _ 83. E8, 10
         mov     dword [mouse_x], eax                    ; 0B87 _ A3, 00000124(d)
-?_036:  movzx   eax, word [?_128]                       ; 0B8C _ 0F B7. 05, 00000004(d)
+?_036:  movzx   eax, word [?_129]                       ; 0B8C _ 0F B7. 05, 00000006(d)
         cwde                                            ; 0B93 _ 98
         lea     edx, [eax-10H]                          ; 0B94 _ 8D. 50, F0
         mov     eax, dword [mouse_y]                    ; 0B97 _ A1, 00000128(d)
         cmp     edx, eax                                ; 0B9C _ 39. C2
         jge     ?_037                                   ; 0B9E _ 7D, 10
-        movzx   eax, word [?_128]                       ; 0BA0 _ 0F B7. 05, 00000004(d)
+        movzx   eax, word [?_129]                       ; 0BA0 _ 0F B7. 05, 00000006(d)
         cwde                                            ; 0BA7 _ 98
         sub     eax, 16                                 ; 0BA8 _ 83. E8, 10
         mov     dword [mouse_y], eax                    ; 0BAB _ A3, 00000128(d)
@@ -2372,7 +2372,7 @@ sheet_slide:; Function begin
         call    sheet_refresh_local                     ; 1C1D _ E8, FFFFFFFC(rel)
         mov     eax, dword [ebp+0CH]                    ; 1C22 _ 8B. 45, 0C
         mov     edx, dword [eax+8H]                     ; 1C25 _ 8B. 50, 08
-        mov     eax, dword [ebp+10H]                    ; 1C28 _ 8B. 45, 10
+        mov     eax, dword [ebp+14H]                    ; 1C28 _ 8B. 45, 14
         add     edx, eax                                ; 1C2B _ 01. C2
         mov     eax, dword [ebp+0CH]                    ; 1C2D _ 8B. 45, 0C
         mov     ecx, dword [eax+4H]                     ; 1C30 _ 8B. 48, 04
@@ -2380,7 +2380,7 @@ sheet_slide:; Function begin
         add     eax, ecx                                ; 1C36 _ 01. C8
         mov     dword [esp+10H], edx                    ; 1C38 _ 89. 54 24, 10
         mov     dword [esp+0CH], eax                    ; 1C3C _ 89. 44 24, 0C
-        mov     eax, dword [ebp+10H]                    ; 1C40 _ 8B. 45, 10
+        mov     eax, dword [ebp+14H]                    ; 1C40 _ 8B. 45, 14
         mov     dword [esp+8H], eax                     ; 1C43 _ 89. 44 24, 08
         mov     eax, dword [ebp+10H]                    ; 1C47 _ 8B. 45, 10
         mov     dword [esp+4H], eax                     ; 1C4A _ 89. 44 24, 04

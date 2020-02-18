@@ -218,8 +218,8 @@ void compute_mouse_position(SheetControl* stl,SHEET* sheet, MOUSE_SEND_INFO* mou
         mouse_x = screen_info.screen_lenth - 16;
     }
 
-    if(mouse_y > screen_info.screen_lenth - 16){
-        mouse_y = screen_info.screen_lenth - 16;
+    if(mouse_y > screen_info.screen_height - 16){
+        mouse_y = screen_info.screen_height - 16;
     }
     paint_string(stl,sheet,0,0,"improve string showing",COL8_FFFFFF);
 }

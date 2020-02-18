@@ -120,7 +120,7 @@ void sheet_slide(SheetControl* stl,SHEET* sheet,int new_x,int new_y){
     sheet->left_up_y = new_y;
     if(sheet->height >= 0){
         sheet_refresh_local(stl,old_x,old_y,old_x+sheet->sheet_length,old_y+sheet->sheet_height);
-        sheet_refresh_local(stl,new_x,new_x,new_x+sheet->sheet_length,new_x+sheet->sheet_height);
+        sheet_refresh_local(stl,new_x,new_y,new_x+sheet->sheet_length,new_y+sheet->sheet_height);
     }
 }
 
