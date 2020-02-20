@@ -12,6 +12,8 @@ extern char  mouse_cursor_buf[256];
 extern char* back_buf;
 extern unsigned int VRAM_ADDRESS;
 
+extern SHEET* sheet_win;
+
 extern char keytable[0x54];
 
 extern FIFO8 keyinfo;       //键盘队列
@@ -19,6 +21,7 @@ extern FIFO8 mouseinfo;     //鼠标队列
 
 extern int mouse_x;
 extern int mouse_y;
+
 
 static MemoryManage* memman = (MemoryManage*)0x100000;
 
@@ -78,7 +81,7 @@ void CMain(void){
     sheet_slide(sheet_control,back_sheet,0,0);
     sheet_slide(sheet_control,mouse_sheet,mouse_x,mouse_y);
 
-    SHEET* sheet_win =  message_box(sheet_control,"window");
+    sheet_win =  message_box(sheet_control,"window");
 
     sheet_updown(sheet_control,back_sheet,0);
     sheet_updown(sheet_control,mouse_sheet,100);

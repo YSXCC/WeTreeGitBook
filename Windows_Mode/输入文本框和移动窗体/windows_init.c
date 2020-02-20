@@ -7,6 +7,8 @@ static ScreenInfo screen_info;       //屏幕的信息，包括长宽和显存�
 static char  mouse_cursor_buf[256];  //鼠标颜色信息，其中存放的是颜色索引
 static char* back_buf;               //屏幕颜色信息
 
+static SHEET* sheet_win;
+
 static int mouse_x = 0;     //鼠标横坐标
 static int mouse_y = 0;     //鼠标纵坐标
 
@@ -255,6 +257,9 @@ void show_mouse_info(SheetControl* sheet_control,SHEET* back_sheet,SHEET* mouse_
         compute_mouse_position(sheet_control,back_sheet,&mouse_send_info);
         // draw_mouse(sheet_control,mouse_sheet);
         sheet_slide(sheet_control,mouse_sheet,mouse_x,mouse_y);
+        if((mouse_send_info.button & 0x01) != 0){
+            sheet_slide(sheet_control,sheet_win,mouse_x - 80,mouse_y - 8);
+        }
     }
 }
 
