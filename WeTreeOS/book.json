@@ -1,0 +1,11 @@
+{
+    "plugins":[
+        "expandable-chapters",
+        "github"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/YSXCC/WeTree"
+        }
+    }
+}

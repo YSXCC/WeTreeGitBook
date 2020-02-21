@@ -1,0 +1,736 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>字体绘制 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="JAVA转换字体为汇编的inc文件.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    WeTreeOS介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Bootloader</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    最简单的Bootloader
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Bootloader/引导扇区.html">
+            
+                <a href="../Bootloader/引导扇区.html">
+            
+                    
+                    引导扇区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Bootloader/计算机启动.html">
+            
+                <a href="../Bootloader/计算机启动.html">
+            
+                    
+                    简析引导扇区
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Protected Mode</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    实模式和保护模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../Protected_Mode/实模式和保护模式产生.html">
+            
+                <a href="../Protected_Mode/实模式和保护模式产生.html">
+            
+                    
+                    实模式和保护模式产生
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../Protected_Mode/实模式和保护模式寻址.html">
+            
+                <a href="../Protected_Mode/实模式和保护模式寻址.html">
+            
+                    
+                    实模式和保护模式寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    实模式跳转保护模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../Protected_Mode/实现模式跳转.html">
+            
+                <a href="../Protected_Mode/实现模式跳转.html">
+            
+                    
+                    实现模式跳转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../Protected_Mode/具体代码实现.html">
+            
+                <a href="../Protected_Mode/具体代码实现.html">
+            
+                    
+                    具体代码实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Windows Mode</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    32位下的绘图——VGA
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="有颜色的画面.html">
+            
+                <a href="有颜色的画面.html">
+            
+                    
+                    有颜色的画面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="初始化桌面.html">
+            
+                <a href="初始化桌面.html">
+            
+                    
+                    初始化桌面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    越来越像windows
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.2.1" data-path="字体绘制.html">
+            
+                <a href="字体绘制.html">
+            
+                    
+                    字体绘制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="JAVA转换字体为汇编的inc文件.html">
+            
+                <a href="JAVA转换字体为汇编的inc文件.html">
+            
+                    
+                    JAVA字体转换代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="字体绘制代码.html">
+            
+                <a href="字体绘制代码.html">
+            
+                    
+                    字体绘制代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="鼠标绘制.html">
+            
+                <a href="鼠标绘制.html">
+            
+                    
+                    鼠标绘制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    犹如神助——中断
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="保护模式下的中断.html">
+            
+                <a href="保护模式下的中断.html">
+            
+                    
+                    保护模式下的中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="利用8259A芯片.html">
+            
+                <a href="利用8259A芯片.html">
+            
+                    
+                    利用8259A芯片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="键盘中断.html">
+            
+                <a href="键盘中断.html">
+            
+                    
+                    键盘中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="鼠标中断.html">
+            
+                <a href="鼠标中断.html">
+            
+                    
+                    鼠标中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.5" data-path="优化数据读取.html">
+            
+                <a href="优化数据读取.html">
+            
+                    
+                    优化数据读取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.6" data-path="解析鼠标数据移动鼠标.html">
+            
+                <a href="解析鼠标数据移动鼠标.html">
+            
+                    
+                    解析鼠标数据移动鼠标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.7" data-path="内存信息获取.html">
+            
+                <a href="内存信息获取.html">
+            
+                    
+                    内存信息获取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.8" data-path="内存管理.html">
+            
+                <a href="内存管理.html">
+            
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.9" data-path="图层技术.html">
+            
+                <a href="图层技术.html">
+            
+                    
+                    图层技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.10" data-path="解决刷新导致的闪烁.html">
+            
+                <a href="解决刷新导致的闪烁.html">
+            
+                    
+                    解决刷新导致的闪烁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.11" data-path="时钟中断.html">
+            
+                <a href="时钟中断.html">
+            
+                    
+                    时钟中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Process</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    进程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../Process/进程注意事项.html">
+            
+                <a href="../Process/进程注意事项.html">
+            
+                    
+                    进程注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >字体绘制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5B57;&#x4F53;&#x7ED8;&#x5236;">&#x5B57;&#x4F53;&#x7ED8;&#x5236;</h1>
+<h2 id="&#x5B9E;&#x73B0;&#x60F3;&#x6CD5;">&#x5B9E;&#x73B0;&#x60F3;&#x6CD5;</h2>
+<ul>
+<li>&#x4E00;&#x4E2A;&#x5B57;&#x4F53;&#x5360;&#x7528;8*16&#x4E2A;&#x50CF;&#x7D20;&#x70B9;</li>
+<li>&#x7528;0&#xFF08;&#x4E0D;&#x663E;&#x793A;&#xFF09;&#x548C;1&#xFF08;&#x663E;&#x793A;&#xFF09;&#x8868;&#x793A;&#x50CF;&#x7D20;&#x70B9;</li>
+<li>&#x5B57;&#x4F53;&#x5E93;&#x53C2;&#x7167;30&#x5929;&#x81EA;&#x5236;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E00;&#x4E66;</li>
+</ul>
+<p><img src="https://gitee.com/YSXCC/MDImage/raw/master/img/20200212100502.png" alt="&#x7ED8;&#x5236;&#x5B57;&#x4F53;"></p>
+<h2 id="&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x6B65;&#x9AA4;">&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x6B65;&#x9AA4;</h2>
+<ul>
+<li><p>&#x5B57;&#x4F53;&#x5E93;&#x7684;txt&#x6587;&#x4EF6;&#x4E2D;&#x4E00;&#x884C;&#x7684;&#x70B9;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4E24;&#x4F4D;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x7684;&#x6570;</p>
+</li>
+<li><p>&#x6240;&#x4EE5;&#x4E00;&#x4E2A;&#x5B57;&#x4F53;&#x5360;&#x7684;&#x5927;&#x5C0F;&#x5C31;&#x662F;16 x 8 x 2&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x4F4D;</p>
+</li>
+<li><p>&#x6C47;&#x7F16;&#x4E2D;&#x83B7;&#x53D6;&#x5B57;&#x4F53;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BE5;&#x5B57;&#x4F53;&#x7684;&#x504F;&#x79FB;&#x4E5F;&#x5C31;&#x662F;&#x5B83;&#x7684;ASCII&#x7801;</p>
+</li>
+<li><p>&#x5982;&apos;A&apos;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x548C;&#x7B2C;&#x4E8C;&#x884C;&#x5C31;&#x5E94;&#x8BE5;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x884C;&#xFF1A;00000000    -&gt;  0x00</li>
+<li>&#x7B2C;&#x4E8C;&#x884C;&#xFF1A;00011000    -&gt;  0x18</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/YSXCC/MDImage/raw/master/img/20200212101218.png" alt="A&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;"></p>
+<h2 id="&#x7528;java&#x6765;&#x5C06;&#x5B57;&#x4F53;&#x7684;txt&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#x4E3A;&#x6C47;&#x7F16;&#x7684;inc&#x6587;&#x4EF6;">&#x7528;java&#x6765;&#x5C06;&#x5B57;&#x4F53;&#x7684;txt&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#x4E3A;&#x6C47;&#x7F16;&#x7684;inc&#x6587;&#x4EF6;</h2>
+<p><a href="JAVA&#x8F6C;&#x6362;&#x5B57;&#x4F53;&#x4E3A;&#x6C47;&#x7F16;&#x7684;inc&#x6587;&#x4EF6;.html">&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="JAVA转换字体为汇编的inc文件.html" class="navigation navigation-next navigation-unique" aria-label="Next page: JAVA字体转换代码">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"字体绘制","level":"4.2.1","depth":2,"next":{"title":"JAVA字体转换代码","level":"4.2.2","depth":2,"path":"Windows_Mode/JAVA转换字体为汇编的inc文件.md","ref":"Windows_Mode/JAVA转换字体为汇编的inc文件.md","articles":[]},"previous":{"title":"越来越像windows","level":"4.2","depth":1,"ref":"","articles":[{"title":"字体绘制","level":"4.2.1","depth":2,"path":"Windows_Mode/字体绘制.md","ref":"Windows_Mode/字体绘制.md","articles":[]},{"title":"JAVA字体转换代码","level":"4.2.2","depth":2,"path":"Windows_Mode/JAVA转换字体为汇编的inc文件.md","ref":"Windows_Mode/JAVA转换字体为汇编的inc文件.md","articles":[]},{"title":"字体绘制代码","level":"4.2.3","depth":2,"path":"Windows_Mode/字体绘制代码.md","ref":"Windows_Mode/字体绘制代码.md","articles":[]},{"title":"鼠标绘制","level":"4.2.4","depth":2,"path":"Windows_Mode/鼠标绘制.md","ref":"Windows_Mode/鼠标绘制.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","github"],"pluginsConfig":{"github":{"url":"https://github.com/YSXCC/WeTree"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Windows_Mode/字体绘制.md","mtime":"2020-02-12T02:29:53.779Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-21T12:20:11.195Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,771 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>鼠标绘制 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="字体绘制代码.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    WeTreeOS介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Bootloader</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    最简单的Bootloader
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Bootloader/引导扇区.html">
+            
+                <a href="../Bootloader/引导扇区.html">
+            
+                    
+                    引导扇区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Bootloader/计算机启动.html">
+            
+                <a href="../Bootloader/计算机启动.html">
+            
+                    
+                    简析引导扇区
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Protected Mode</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    实模式和保护模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../Protected_Mode/实模式和保护模式产生.html">
+            
+                <a href="../Protected_Mode/实模式和保护模式产生.html">
+            
+                    
+                    实模式和保护模式产生
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../Protected_Mode/实模式和保护模式寻址.html">
+            
+                <a href="../Protected_Mode/实模式和保护模式寻址.html">
+            
+                    
+                    实模式和保护模式寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    实模式跳转保护模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../Protected_Mode/实现模式跳转.html">
+            
+                <a href="../Protected_Mode/实现模式跳转.html">
+            
+                    
+                    实现模式跳转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../Protected_Mode/具体代码实现.html">
+            
+                <a href="../Protected_Mode/具体代码实现.html">
+            
+                    
+                    具体代码实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Windows Mode</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    32位下的绘图——VGA
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="有颜色的画面.html">
+            
+                <a href="有颜色的画面.html">
+            
+                    
+                    有颜色的画面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="初始化桌面.html">
+            
+                <a href="初始化桌面.html">
+            
+                    
+                    初始化桌面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    越来越像windows
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="字体绘制.html">
+            
+                <a href="字体绘制.html">
+            
+                    
+                    字体绘制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="JAVA转换字体为汇编的inc文件.html">
+            
+                <a href="JAVA转换字体为汇编的inc文件.html">
+            
+                    
+                    JAVA字体转换代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="字体绘制代码.html">
+            
+                <a href="字体绘制代码.html">
+            
+                    
+                    字体绘制代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2.4" data-path="鼠标绘制.html">
+            
+                <a href="鼠标绘制.html">
+            
+                    
+                    鼠标绘制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    犹如神助——中断
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="保护模式下的中断.html">
+            
+                <a href="保护模式下的中断.html">
+            
+                    
+                    保护模式下的中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="利用8259A芯片.html">
+            
+                <a href="利用8259A芯片.html">
+            
+                    
+                    利用8259A芯片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="键盘中断.html">
+            
+                <a href="键盘中断.html">
+            
+                    
+                    键盘中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="鼠标中断.html">
+            
+                <a href="鼠标中断.html">
+            
+                    
+                    鼠标中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.5" data-path="优化数据读取.html">
+            
+                <a href="优化数据读取.html">
+            
+                    
+                    优化数据读取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.6" data-path="解析鼠标数据移动鼠标.html">
+            
+                <a href="解析鼠标数据移动鼠标.html">
+            
+                    
+                    解析鼠标数据移动鼠标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.7" data-path="内存信息获取.html">
+            
+                <a href="内存信息获取.html">
+            
+                    
+                    内存信息获取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.8" data-path="内存管理.html">
+            
+                <a href="内存管理.html">
+            
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.9" data-path="图层技术.html">
+            
+                <a href="图层技术.html">
+            
+                    
+                    图层技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.10" data-path="解决刷新导致的闪烁.html">
+            
+                <a href="解决刷新导致的闪烁.html">
+            
+                    
+                    解决刷新导致的闪烁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.11" data-path="时钟中断.html">
+            
+                <a href="时钟中断.html">
+            
+                    
+                    时钟中断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Process</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    进程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../Process/进程注意事项.html">
+            
+                <a href="../Process/进程注意事项.html">
+            
+                    
+                    进程注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >鼠标绘制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9F20;&#x6807;&#x7ED8;&#x5236;">&#x9F20;&#x6807;&#x7ED8;&#x5236;</h1>
+<ul>
+<li>&#x9F20;&#x6807;&#x7ED8;&#x5236;&#x5176;&#x5B9E;&#x4E5F;&#x5C31;&#x662F;&#x753B;&#x77E9;&#x5F62;</li>
+<li>&#x6700;&#x5F00;&#x59CB;&#x77E9;&#x5F62;&#x7684;&#x51FD;&#x6570;paint_rectangle&#x662F;&#x7EAF;&#x8272;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x4E4B;&#x540E;&#xFF0C;&#x7528;&#x6570;&#x7EC4;&#x6765;&#x4FDD;&#x5B58;&#x989C;&#x8272;&#x7D22;&#x5F15;</li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">paint_block</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* vram,<span class="hljs-keyword">int</span> screen_lenth,
+    <span class="hljs-keyword">int</span> start_x,<span class="hljs-keyword">int</span> start_y,
+    <span class="hljs-keyword">int</span> x_size, <span class="hljs-keyword">int</span> y_size,
+    <span class="hljs-keyword">char</span>* buf)</span></span>{
+
+    <span class="hljs-keyword">int</span> row;
+    <span class="hljs-keyword">int</span> column;
+    <span class="hljs-keyword">for</span>(row = <span class="hljs-number">0</span> ; row &lt; y_size; row++){
+        <span class="hljs-keyword">for</span>(column = <span class="hljs-number">0</span>; column &lt; x_size; column++){
+            vram[(screen_lenth * (start_y + row)) + (start_x + column)] = buf[(row * x_size) + column];
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>&#x521D;&#x59CB;&#x5316;&#x9F20;&#x6807;&#x7684;&#x989C;&#x8272;&#x6570;&#x7EC4;</li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init_mouse_cursor</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* mouse,<span class="hljs-keyword">char</span> back_color)</span></span>{
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> cursor[<span class="hljs-number">16</span>][<span class="hljs-number">16</span>] = {
+    <span class="hljs-string">&quot;*...............&quot;</span>,
+    <span class="hljs-string">&quot;**..............&quot;</span>,
+    <span class="hljs-string">&quot;*O*.............&quot;</span>,
+    <span class="hljs-string">&quot;*OO*............&quot;</span>,
+    <span class="hljs-string">&quot;*OOO*...........&quot;</span>,
+    <span class="hljs-string">&quot;*OOOO*..........&quot;</span>,
+    <span class="hljs-string">&quot;*OOOOO*.........&quot;</span>,
+    <span class="hljs-string">&quot;*OOOOOO*........&quot;</span>,
+    <span class="hljs-string">&quot;*OOOOOOO*.......&quot;</span>,
+    <span class="hljs-string">&quot;*OOOO*****......&quot;</span>,
+    <span class="hljs-string">&quot;*OO*O*..........&quot;</span>,
+    <span class="hljs-string">&quot;*O*.*O*.........&quot;</span>,
+    <span class="hljs-string">&quot;**..*O*.........&quot;</span>,
+    <span class="hljs-string">&quot;*....*O*........&quot;</span>,
+    <span class="hljs-string">&quot;.....*O*........&quot;</span>,
+    <span class="hljs-string">&quot;......*.........&quot;</span>
+    };
+    <span class="hljs-keyword">int</span> row;     <span class="hljs-comment">//&#x884C;</span>
+    <span class="hljs-keyword">int</span> column;  <span class="hljs-comment">//&#x5217;</span>
+    <span class="hljs-keyword">for</span>(row = <span class="hljs-number">0</span>; row &lt; <span class="hljs-number">16</span>; row++){
+        <span class="hljs-keyword">for</span>(column = <span class="hljs-number">0</span>; column &lt; <span class="hljs-number">16</span>; column++){
+            <span class="hljs-keyword">if</span>(cursor[row][column] == <span class="hljs-string">&apos;*&apos;</span>){         <span class="hljs-comment">//&apos;*&apos;&#x662F;&#x9ED1;&#x8272;&#x7684;</span>
+                mouse[row*<span class="hljs-number">16</span> + column] = COL8_000000;
+            }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(cursor[row][column] == <span class="hljs-string">&apos;O&apos;</span>){   <span class="hljs-comment">//&apos;O&apos;&#x662F;&#x767D;&#x8272;&#x7684;</span>
+                mouse[row*<span class="hljs-number">16</span> + column] = COL8_FFFFFF;
+            }<span class="hljs-keyword">else</span>{
+                mouse[row*<span class="hljs-number">16</span> + column] = back_color;<span class="hljs-comment">//&#x5176;&#x4ED6;&#x662F;&#x80CC;&#x666F;&#x8272;</span>
+            }
+        }
+    }
+}
+</code></pre>
+<p><img src="https://gitee.com/YSXCC/MDImage/raw/master/img/20200213211147.png" alt="&#x6700;&#x7EC8;&#x7ED3;&#x679C;"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="字体绘制代码.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 字体绘制代码">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"鼠标绘制","level":"4.2.4","depth":2,"next":{"title":"犹如神助——中断","level":"4.3","depth":1,"ref":"","articles":[{"title":"保护模式下的中断","level":"4.3.1","depth":2,"path":"Windows_Mode/保护模式下的中断.md","ref":"Windows_Mode/保护模式下的中断.md","articles":[]},{"title":"利用8259A芯片","level":"4.3.2","depth":2,"path":"Windows_Mode/利用8259A芯片.md","ref":"Windows_Mode/利用8259A芯片.md","articles":[]},{"title":"键盘中断","level":"4.3.3","depth":2,"path":"Windows_Mode/键盘中断.md","ref":"Windows_Mode/键盘中断.md","articles":[]},{"title":"鼠标中断","level":"4.3.4","depth":2,"path":"Windows_Mode/鼠标中断.md","ref":"Windows_Mode/鼠标中断.md","articles":[]},{"title":"优化数据读取","level":"4.3.5","depth":2,"path":"Windows_Mode/优化数据读取.md","ref":"Windows_Mode/优化数据读取.md","articles":[]},{"title":"解析鼠标数据移动鼠标","level":"4.3.6","depth":2,"path":"Windows_Mode/解析鼠标数据移动鼠标.md","ref":"Windows_Mode/解析鼠标数据移动鼠标.md","articles":[]},{"title":"内存信息获取","level":"4.3.7","depth":2,"path":"Windows_Mode/内存信息获取.md","ref":"Windows_Mode/内存信息获取.md","articles":[]},{"title":"内存管理","level":"4.3.8","depth":2,"path":"Windows_Mode/内存管理.md","ref":"Windows_Mode/内存管理.md","articles":[]},{"title":"图层技术","level":"4.3.9","depth":2,"path":"Windows_Mode/图层技术.md","ref":"Windows_Mode/图层技术.md","articles":[]},{"title":"解决刷新导致的闪烁","level":"4.3.10","depth":2,"path":"Windows_Mode/解决刷新导致的闪烁.md","ref":"Windows_Mode/解决刷新导致的闪烁.md","articles":[]},{"title":"时钟中断","level":"4.3.11","depth":2,"path":"Windows_Mode/时钟中断.md","ref":"Windows_Mode/时钟中断.md","articles":[]}]},"previous":{"title":"字体绘制代码","level":"4.2.3","depth":2,"path":"Windows_Mode/字体绘制代码.md","ref":"Windows_Mode/字体绘制代码.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","github","livereload"],"pluginsConfig":{"github":{"url":"https://github.com/YSXCC/WeTree"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Windows_Mode/鼠标绘制.md","mtime":"2020-02-13T13:11:59.572Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-21T12:13:17.505Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
