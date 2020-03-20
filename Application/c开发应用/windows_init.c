@@ -546,7 +546,7 @@ void console_task(SHEET* sheet,int memorytotal){
                 set_cursor(sheet_control,sheet,g_Console.cursor_x,g_Console.cursor_y,COL8_000000);
                 cmdline[g_Console.cursor_x / 8 - 2] = 0;
                 g_Console.cursor_y = console_new_line(g_Console.cursor_y,sheet);
-
+                g_Console.cursor_x = 16;
                 //判断是否是”mem“指令
                 if(strcmp(cmdline,"mem") == 1){
                     command_mem(memorytotal);
@@ -559,7 +559,6 @@ void console_task(SHEET* sheet,int memorytotal){
                 }else if(strcmp(cmdline,"hlt") == 1){
                     command_hlt();
                 }
-                g_Console.cursor_x = 16;
             }else{
                 char c = transfer_scancode(data);
                 if(c != 0 && g_Console.cursor_x < 240){
