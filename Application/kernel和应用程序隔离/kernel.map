@@ -28,7 +28,7 @@ Value     Name
 0000763B  KeyboardHandler
 0000764D  MouseHandler
 0000765F  AsmConsolePutCharHandler
-0000773E  SegCode32Len
+0000773F  SegCode32Len
 00001000  SystemFontLength
 00000400  TopOfStack0
 00000800  TopOfStack1
@@ -543,28 +543,28 @@ Real              Virtual           Name
             F995              F995  _MouseHandler
             F9A7              F9A7  _AsmConsolePutCharHandler
             F9B3              F9B3  start_app
-            F9E8              F9E8  io_hlt
-            F9EA              F9EA  io_cli
-            F9EC              F9EC  io_sti
-            F9EE              F9EE  io_stihlt
-            F9F1              F9F1  io_out8
-            F9FB              F9FB  io_out16
-            FA07              FA07  io_out32
-            FA11              FA11  io_in8
-            FA1C              FA1C  io_in16
-            FA28              FA28  io_in32
-            FA33              FA33  io_load_eflags
-            FA36              FA36  io_store_eflags
-            FA3D              FA3D  get_memory_block_count
-            FA43              FA43  get_memory_address
-            FA49              FA49  get_addr_gdt
-            FA4F              FA4F  get_code32_addr
-            FA55              FA55  load_tr
-            FA5B              FA5B  taskswitch9
-            FA63              FA63  taskswitch8
-            FA6B              FA6B  taskswitch7
-            FA73              FA73  taskswitch10
-            FA7B              FA7B  farjmp
+            F9E9              F9E9  io_hlt
+            F9EB              F9EB  io_cli
+            F9ED              F9ED  io_sti
+            F9EF              F9EF  io_stihlt
+            F9F2              F9F2  io_out8
+            F9FC              F9FC  io_out16
+            FA08              FA08  io_out32
+            FA12              FA12  io_in8
+            FA1D              FA1D  io_in16
+            FA29              FA29  io_in32
+            FA34              FA34  io_load_eflags
+            FA37              FA37  io_store_eflags
+            FA3E              FA3E  get_memory_block_count
+            FA44              FA44  get_memory_address
+            FA4A              FA4A  get_addr_gdt
+            FA50              FA50  get_code32_addr
+            FA56              FA56  load_tr
+            FA5C              FA5C  taskswitch9
+            FA64              FA64  taskswitch8
+            FA6C              FA6C  taskswitch7
+            FA74              FA74  taskswitch10
+            FA7C              FA7C  farjmp
 
 ---- Section .data ------------------------------------------------------------
 

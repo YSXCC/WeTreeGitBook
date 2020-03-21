@@ -340,7 +340,7 @@ start_app:
 
     push ecx
     push eax
-    call far [esp]
+    call far [esp]  ;可以理解为跳转到应用程序执行
     
     mov ax, SelectorData
     mov ds, ax
